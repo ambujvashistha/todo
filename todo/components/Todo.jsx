@@ -29,7 +29,7 @@ const styles = {
     margin: 10,
   },
   todoText: {
-    fonSize: 10,
+    fontSize: 25,
     fontWeight: 20,
     color: "red",
   },
