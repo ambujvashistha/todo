@@ -97,8 +97,6 @@ export default function Todo() {
         </TouchableOpacity>
       </View>
       <View>
-        <Text>{task}</Text>
-
         <FlatList
           data={todos}
           renderItem={({ item }) => (
