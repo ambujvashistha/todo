@@ -37,11 +37,14 @@ const styles = {
     margin: 10,
   },
   add: {
-    height: 40,
-    width: 40,
+    height: 60,
+    width: 60,
     borderColor: "black",
     borderWidth: 1,
     backgroundColor: "white",
+    borderRadius: 10,
+
+    margin: 5,
   },
 };
 
