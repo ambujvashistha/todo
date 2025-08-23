@@ -42,9 +42,10 @@ const styles = {
     borderColor: "black",
     borderWidth: 1,
     backgroundColor: "white",
-    borderRadius: 10,
-
+    borderRadius: 15,
     margin: 5,
+    paddingLeft: 7,
+    paddingTop: 15,
   },
 };
 
@@ -71,7 +72,7 @@ export default function Todo() {
           placeholder="Add a new task"
         />
         <TouchableOpacity onPress={() => addTask(task)} style={styles.add}>
-          <Text>Add</Text>
+          <Text style={{ fontSize: 20, fontWeight: "bold" }}>ADD</Text>
         </TouchableOpacity>
       </View>
       <View>
