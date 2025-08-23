@@ -7,6 +7,8 @@ import {
   Image,
   FlatList,
   Button,
+  Touchable,
+  TouchableOpacity,
 } from "react-native";
 
 const styles = {
@@ -56,7 +58,9 @@ export default function Todo() {
           value={task}
           placeholder="Add a new task"
         />
-        <Button title={"add"} onPress={() => addTask(task)} />
+        <TouchableOpacity onPress={() => addTask(task)}>
+          <Text>Add</Text>
+        </TouchableOpacity>
       </View>
       <View>
         <Text>{task}</Text>
@@ -68,7 +72,9 @@ export default function Todo() {
               <View>
                 <Text style={styles.todoText}>{item}</Text>
               </View>
-              <Button title={"Remove"} />
+              <TouchableOpacity>
+                <Text>Remove</Text>
+              </TouchableOpacity>
             </View>
           )}
           keyExtractor={(item, index) => index.toString()}
