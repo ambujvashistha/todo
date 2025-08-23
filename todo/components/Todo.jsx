@@ -47,6 +47,28 @@ const styles = {
     paddingLeft: 7,
     paddingTop: 15,
   },
+  remove: {
+    height: 60,
+    width: 80,
+    borderColor: "black",
+    borderWidth: 1,
+    backgroundColor: "white",
+    borderRadius: 15,
+    margin: 5,
+    paddingLeft: 7,
+    paddingTop: 15,
+  },
+  task: {
+    height: 60,
+    width: 200,
+    borderColor: "black",
+    borderWidth: 1,
+    backgroundColor: "white",
+    borderRadius: 15,
+    marginLeft: 10,
+    margin: 5,
+    padding: 5,
+  },
 };
 
 export default function Todo() {
@@ -82,11 +104,11 @@ export default function Todo() {
           data={todos}
           renderItem={({ item }) => (
             <View style={{ flexDirection: "row" }}>
-              <View>
+              <View style={styles.task}>
                 <Text style={styles.todoText}>{item}</Text>
               </View>
               <TouchableOpacity>
-                <Text>Remove</Text>
+                <Text style={styles.remove}>Remove</Text>
               </TouchableOpacity>
             </View>
           )}
