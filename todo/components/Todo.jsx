@@ -59,7 +59,6 @@ const styles = {
     paddingTop: 15,
   },
   task: {
-    height: 60,
     width: 200,
     borderColor: "black",
     borderWidth: 1,
