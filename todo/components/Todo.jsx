@@ -36,6 +36,13 @@ const styles = {
     color: "red",
     margin: 10,
   },
+  add: {
+    height: 40,
+    width: 40,
+    borderColor: "black",
+    borderWidth: 1,
+    backgroundColor: "white",
+  },
 };
 
 export default function Todo() {
@@ -46,7 +53,9 @@ export default function Todo() {
   );
 
   const addTask = (task) => {
-    setTodos([...todos, task]);
+    if (task) {
+      setTodos([...todos, task]);
+    }
   };
   return (
     <SafeAreaView>
@@ -58,7 +67,7 @@ export default function Todo() {
           value={task}
           placeholder="Add a new task"
         />
-        <TouchableOpacity onPress={() => addTask(task)}>
+        <TouchableOpacity onPress={() => addTask(task)} style={styles.add}>
           <Text>Add</Text>
         </TouchableOpacity>
       </View>
