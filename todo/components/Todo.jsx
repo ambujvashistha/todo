@@ -1,5 +1,13 @@
 import { react, useState } from "react";
-import { View, Text, TextInput, SafeAreaView, Image } from "react-native";
+import {
+  View,
+  Text,
+  TextInput,
+  SafeAreaView,
+  Image,
+  FlatList,
+  Button,
+} from "react-native";
 
 const styles = {
   input: {
@@ -20,6 +28,11 @@ const styles = {
     borderRadius: 100,
     margin: 10,
   },
+  todoText: {
+    fonSize: 10,
+    fontWeight: 20,
+    color: "red",
+  },
 };
 
 export default function Todo() {
@@ -29,8 +42,8 @@ export default function Todo() {
     "https://upload.wikimedia.org/wikipedia/en/2/21/Web_of_Spider-Man_Vol_1_129-1.png"
   );
 
-  const addTask = (newtask) => {
-    setTask.append(newtask);
+  const addTask = (task) => {
+    setTodos([...todos, task]);
   };
   return (
     <SafeAreaView>
@@ -42,8 +55,16 @@ export default function Todo() {
           value={task}
           placeholder="Add a new task"
         />
-
+      </View>
+      <View>
+        <Button title={"add"} onPress={() => addTask(task)} />
         <Text>{task}</Text>
+
+        <FlatList
+          data={todos}
+          renderItem={({ item }) => <Text style={styles.todoText}>{item}</Text>}
+          keyExtractor={(item, index) => index.toString()}
+        />
       </View>
     </SafeAreaView>
   );
