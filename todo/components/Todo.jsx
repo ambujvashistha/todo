@@ -5,6 +5,10 @@ const styles = {
   input: {
     borderWidth: 1,
     borderColor: "black",
+    borderRadius: 20,
+    width: 250,
+    height: 40,
+    padding: 30,
   },
 };
 
