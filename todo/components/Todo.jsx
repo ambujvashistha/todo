@@ -64,6 +64,7 @@ export default function Todo() {
           data={todos}
           renderItem={({ item }) => <Text style={styles.todoText}>{item}</Text>}
           keyExtractor={(item, index) => index.toString()}
+          showsVerticalScrollIndicator={false}
         />
       </View>
     </SafeAreaView>
