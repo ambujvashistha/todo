@@ -32,6 +32,7 @@ const styles = {
     fontSize: 25,
     fontWeight: 20,
     color: "red",
+    margin: 10,
   },
 };
 
@@ -55,14 +56,21 @@ export default function Todo() {
           value={task}
           placeholder="Add a new task"
         />
+        <Button title={"add"} onPress={() => addTask(task)} />
       </View>
       <View>
-        <Button title={"add"} onPress={() => addTask(task)} />
         <Text>{task}</Text>
 
         <FlatList
           data={todos}
-          renderItem={({ item }) => <Text style={styles.todoText}>{item}</Text>}
+          renderItem={({ item }) => (
+            <View style={{ flexDirection: "row" }}>
+              <View>
+                <Text style={styles.todoText}>{item}</Text>
+              </View>
+              <Button title={"Remove"} />
+            </View>
+          )}
           keyExtractor={(item, index) => index.toString()}
           showsVerticalScrollIndicator={false}
         />
