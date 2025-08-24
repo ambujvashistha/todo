@@ -47,16 +47,20 @@ const styles = {
     paddingLeft: 7,
     paddingTop: 15,
   },
-  remove: {
+  removeBtn: {
     height: 60,
     width: 80,
     borderColor: "black",
     borderWidth: 1,
     borderRadius: 15,
     margin: 5,
-    // paddingLeft: 7,
-    // paddingTop: 15,
-    // textAlign: "center",
+    justifyContent: "center", // centers child
+    alignItems: "center", // centers child
+  },
+  removeIcon: {
+    height: 25, // smaller fixed size
+    width: 25,
+    resizeMode: "contain", // ensures it scales nicely
   },
   task: {
     width: 200,
@@ -109,8 +113,8 @@ export default function Todo() {
                 onPress={() => setTodos(todos.filter((_, i) => i !== index))}
               >
                 <Image
-                  source={{ uri: require("../assets/bin.png") }}
-                  style={styles.remove}
+                  source={require("../assets/bin.png")}
+                  style={styles.removeIcon}
                 />
               </TouchableOpacity>
             </View>
