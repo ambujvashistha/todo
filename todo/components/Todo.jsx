@@ -52,12 +52,11 @@ const styles = {
     width: 80,
     borderColor: "black",
     borderWidth: 1,
-    backgroundColor: "white",
     borderRadius: 15,
     margin: 5,
-    paddingLeft: 7,
-    paddingTop: 15,
-    textAlign: "center",
+    // paddingLeft: 7,
+    // paddingTop: 15,
+    // textAlign: "center",
   },
   task: {
     width: 200,
@@ -109,7 +108,10 @@ export default function Todo() {
               <TouchableOpacity
                 onPress={() => setTodos(todos.filter((_, i) => i !== index))}
               >
-                <Text style={styles.remove}>Remove</Text>
+                <Image
+                  source={{ uri: require("../assets/bin.png") }}
+                  style={styles.remove}
+                />
               </TouchableOpacity>
             </View>
           )}
