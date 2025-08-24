@@ -111,6 +111,7 @@ export default function Todo() {
               </View>
               <TouchableOpacity
                 onPress={() => setTodos(todos.filter((_, i) => i !== index))}
+                style={styles.removeBtn}
               >
                 <Image
                   source={require("../assets/bin.png")}
