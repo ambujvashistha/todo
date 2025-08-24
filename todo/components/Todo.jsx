@@ -57,6 +57,7 @@ const styles = {
     margin: 5,
     paddingLeft: 7,
     paddingTop: 15,
+    textAlign: "center",
   },
   task: {
     width: 200,
@@ -96,15 +97,17 @@ export default function Todo() {
           <Text style={{ fontSize: 20, fontWeight: "bold" }}>ADD</Text>
         </TouchableOpacity>
       </View>
-      <View>
+      <View style={{ flex: 1, alignItems: "center" }}>
         <FlatList
           data={todos}
-          renderItem={({ item }) => (
+          renderItem={({ item, index }) => (
             <View style={{ flexDirection: "row" }}>
               <View style={styles.task}>
                 <Text style={styles.todoText}>{item}</Text>
               </View>
-              <TouchableOpacity>
+              <TouchableOpacity
+                onPress={() => setTodos(todos.filter((_, i) => i !== index))}
+              >
                 <Text style={styles.remove}>Remove</Text>
               </TouchableOpacity>
             </View>
