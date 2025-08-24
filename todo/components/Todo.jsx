@@ -92,6 +92,7 @@ export default function Todo() {
           onChangeText={(ele) => setTask(ele)}
           value={task}
           placeholder="Add a new task"
+          onSubmitEditing={() => addTask(task)}
         />
         <TouchableOpacity onPress={() => addTask(task)} style={styles.add}>
           <Text style={{ fontSize: 20, fontWeight: "bold" }}>ADD</Text>
