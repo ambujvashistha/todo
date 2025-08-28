@@ -13,8 +13,14 @@ const todos = [
 
 const app = express();
 
+app.use(express.json());
+
 app.get("/todos", (req, res) => {
   res.status(200).json(todos);
+});
+
+app.post("/todos", (req, res) => {
+  console.log(req.body);
 });
 
 app.listen(3000, () => {
