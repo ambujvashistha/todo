@@ -1,8 +1,18 @@
-import { registerRootComponent } from 'expo';
+const express = require("express");
 
-import App from './App';
+const todos = [
+  {
+    title: "Attempt post class",
+    completed: false,
+  },
+  {
+    title: "Attempt post class",
+    completed: false,
+  },
+];
 
-// registerRootComponent calls AppRegistry.registerComponent('main', () => App);
-// It also ensures that whether you load the app in Expo Go or in a native build,
-// the environment is set up appropriately
-registerRootComponent(App);
+const app = express();
+
+app.listen(3000, () => {
+  console.log("Server started on port 3000");
+});
