@@ -20,7 +20,13 @@ app.get("/todos", (req, res) => {
 });
 
 app.post("/todos", (req, res) => {
-  console.log(req.body);
+  const newTodo = {
+    title: req.body.title,
+    completed: false,
+  };
+
+  todos.push(newTodo);
+  res.status(201).json(newTodo);
 });
 
 app.listen(3000, () => {
