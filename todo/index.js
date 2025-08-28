@@ -1,21 +1,14 @@
 const express = require("express");
+const fs = require("fs");
 
-const todos = [
-  {
-    title: "Attempt post class",
-    completed: false,
-  },
-  {
-    title: "Attempt post class",
-    completed: false,
-  },
-];
+const todos = [,];
 
 const app = express();
 
 app.use(express.json());
 
-app.get("/todos", (req, res) => {
+app.get("/todos", async (req, res) => {
+  const todos = await fs.readFile(__dirname + "/db.json", "utf-8");
   res.status(200).json(todos);
 });
 
