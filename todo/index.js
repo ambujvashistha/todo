@@ -13,6 +13,10 @@ const todos = [
 
 const app = express();
 
+app.get("/todos", (req, res) => {
+  res.status(200).json(todos);
+});
+
 app.listen(3000, () => {
   console.log("Server started on port 3000");
 });
